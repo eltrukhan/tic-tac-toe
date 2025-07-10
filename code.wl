@@ -1,15 +1,19 @@
 (* ::Package:: *)
 
-(* ::Code::Initialization:: *)
-
+Dynamic@nolclr;
+Dynamic@krestclr;
+nolclr=Orange;
+krestclr=Blue;
 nolik=
-{Circle[#,0.35]}&;
+{Dynamic@nolclr,Circle[#,0.35]}&;
 krestik=
-{Line[{#+{0.35,0.35},#+{-0.35,-0.35}}],Line[{#+{-0.35,0.35},#+{0.35,-0.35}}]}&;
+{Dynamic@krestclr,Line[{#+{0.35,0.35},#+{-0.35,-0.35}}],Line[{#+{-0.35,0.35},#+{0.35,-0.35}}]}&;
 
 mask1 = ConstantArray[1,5];
 mask2 = DiagonalMatrix[mask1];
 mask3 = Reverse[mask2];
+sound1=Audio[SoundNote["C"]];
+sound2=Audio[SoundNote["G"]];
 
 ClearAll[UpdateScale];
 UpdateScale[speed_,delta_] := (scale = Clip[(1+0.015*speed)*Boole[delta>0]*scale +  (1-0.015*speed)*Boole[delta<0]*scale + scale*Boole[delta == 0.], {1,3.5}])
@@ -120,13 +124,18 @@ Row[{Button["\:043a\:0440\:0435\:0441\:0442\:0438\:043a",FirstMoveKrestik[]],But
 Column[{"\:0423\:0440\:043e\:0432\:0435\:043d\:044c \:0441\:043b\:043e\:0436\:043d\:043e\:0441\:0442\:0438",
 Row[{Slider[Dynamic[difficulty],{0,3,1}],Dynamic[difficulty]}]},Center,Spacings->1],
 Button["\:0420\:0435\:0441\:0442\:0430\:0440\:0442",ClearField[],ImageSize->{200,40}],
-Button["\:041f\:043e\:0434\:0441\:043a\:0430\:0437\:043a\:0430",Hint[],ImageSize->{200,40}]},
+Button["\:041f\:043e\:0434\:0441\:043a\:0430\:0437\:043a\:0430",Hint[],ImageSize->{200,40}],
+Row[{ColorSlider[Dynamic@nolclr],Dynamic@Graphics[{nolclr,Circle[{0,0},0.35]},Axes->False]}],
+Row[{ColorSlider[Dynamic@krestclr],Dynamic@Graphics[{krestclr,Line[{{0.35,0.35},{-0.35,-0.35}}],Line[{{-0.35,0.35},{0.35,-0.35}}]},Axes->False]}]
+
+},
+
 Center,Spacings->3]}])
 
 (*\:0421\:043b\:043e\:0436\:043d\:044b\:0439 \:0431\:043e\:0442*)
 
 ClearAll[MakeOneMoveAndBot];
-MakeOneMoveAndBot[mousepos_, difficulty_:0] := If[IsAvailableQ[mousepos],If[currentMove == 1,AppendTo[kr,mousepos],AppendTo[nol,mousepos]]; UpdateField[mousepos, currentMove];hintkr={};hintnol={};If[MatchQ[a  ,_Column], FirstMoveKrestik[]];
+MakeOneMoveAndBot[mousepos_, difficulty_:0] := If[IsAvailableQ[mousepos],If[currentMove == 1,AppendTo[kr,mousepos];AudioStop@sound2;AudioPlay@sound1,AppendTo[nol,mousepos];AudioStop@sound1;AudioPlay@sound2]; UpdateField[mousepos, currentMove];hintkr={};hintnol={};If[MatchQ[a  ,_Column], FirstMoveKrestik[]];
  currentMove *=-1;DetermineVictory[difficulty]]
 
 DetermineVictory[0] := DetermineVictory[];

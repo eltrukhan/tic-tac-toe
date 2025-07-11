@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[      7235,        177]
-NotebookOptionsPosition[      6145,        149]
-NotebookOutlinePosition[      6615,        167]
-CellTagsIndexPosition[      6572,        164]
+NotebookDataLength[      2860,         81]
+NotebookOptionsPosition[      2083,         58]
+NotebookOutlinePosition[      2553,         76]
+CellTagsIndexPosition[      2510,         73]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -47,104 +47,13 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"SetDirectory", "[", 
    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{"<<", "code.wl"}]}], "Input",
- CellChangeTimes->{{3.9610702737414684`*^9, 3.961070274157213*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"c82b6de2-075e-5f41-98de-a3ca42db728e"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Game", "[", "]"}]], "Input",
- CellChangeTimes->{{3.961070205248251*^9, 3.961070209699644*^9}},
- CellLabel->"In[3]:=",ExpressionUUID->"12354596-e17e-1245-b0cc-3e377cc1c4e9"],
-
-Cell[BoxData[
- TemplateBox[{
-   TagBox[
-    DynamicBox[
-     ToBoxes[
-      Graphics[{LightGray, 
-        $CellContext`HighlightRectangle[
-         MousePosition["Graphics"]], 
-        Darker[Gray], Thick, 
-        $CellContext`DrawLines[$CellContext`minlimx, $CellContext`maxlimx, \
-$CellContext`minlimy, $CellContext`maxlimy], 
-        AbsoluteThickness[2], Green, 
-        Map[$CellContext`krestik, $CellContext`hintkr], 
-        Map[$CellContext`nolik, $CellContext`hintnol], 
-        Lighter[Blue, 0.4], 
-        Map[$CellContext`krestik, $CellContext`kr], 
-        Lighter[Orange, 0.4], 
-        Map[$CellContext`nolik, $CellContext`nol], Red, 
-        AbsoluteThickness[4], 
-        Opacity[0.5], 
-        $CellContext`DrawVictoryLine[]}, 
-       PlotRange -> $CellContext`center + $CellContext`scale \
-$CellContext`width, Background -> White, ImageSize -> 500], StandardForm]], 
-    EventHandlerTag[{"MouseClicked" :> ($CellContext`mousepos = Round[
-          MousePosition[
-          "Graphics"]]; $CellContext`MakeOneMoveAndBot[$CellContext`mousepos, \
-$CellContext`difficulty]), "MouseDragged" :> ($CellContext`UpdateDraglist[
-         MousePosition[
-         "Graphics"]]; $CellContext`CalculateCenter[$CellContext`draglist, \
-$CellContext`scale]), 
-      "MouseUp" :> ($CellContext`draglist = {}; \
-$CellContext`UpdateLims[$CellContext`center, $CellContext`scale, \
-$CellContext`width]), {
-       "MouseUp", 
-        2} :> ($CellContext`scalelist = {}; \
-$CellContext`UpdateLims[$CellContext`center, $CellContext`scale, \
-$CellContext`width]), {"MouseDragged", 2} :> ($CellContext`UpdateScalelist[
-         MousePosition["CellScaled"]]; 
-       If[Length[$CellContext`scalelist] > 
-         1, $CellContext`UpdateDelta[$CellContext`scalelist]; \
-$CellContext`UpdateSpeed[$CellContext`scalelist]]; \
-$CellContext`UpdateScale[$CellContext`speed, $CellContext`delta]), Method -> 
-      "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]], 
-   TagBox[
-    GridBox[{{
-       DynamicBox[
-        ToBoxes[$CellContext`a, StandardForm], 
-        ImageSizeCache -> {
-         195.1256795883179, {3.383300704881549, 10.785302490927279`}}]}, {
-       TagBox[
-        GridBox[{{
-          "\"\:0423\:0440\:043e\:0432\:0435\:043d\:044c \:0441\:043b\:043e\
-\:0436\:043d\:043e\:0441\:0442\:0438\""}, {
-           TemplateBox[{
-             SliderBox[
-              Dynamic[$CellContext`difficulty], {0, 3, 1}], 
-             DynamicBox[
-              ToBoxes[$CellContext`difficulty, StandardForm]]}, 
-            "RowDefault"]}}, DefaultBaseStyle -> "Column", 
-         GridBoxAlignment -> {"Columns" -> {{Center}}}, 
-         GridBoxItemSize -> {
-          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-         GridBoxSpacings -> {"Columns" -> {{Automatic}}, "Rows" -> {{1}}}], 
-        "Column"]}, {
-       ButtonBox[
-       "\"\:0420\:0435\:0441\:0442\:0430\:0440\:0442\"", Appearance -> 
-        Automatic, ButtonFunction :> $CellContext`ClearField[], Evaluator -> 
-        Automatic, ImageSize -> {200, 40}, Method -> "Preemptive"]}, {
-       ButtonBox[
-       "\"\:041f\:043e\:0434\:0441\:043a\:0430\:0437\:043a\:0430\"", 
-        Appearance -> Automatic, ButtonFunction :> $CellContext`Hint[], 
-        Evaluator -> Automatic, ImageSize -> {200, 40}, Method -> 
-        "Preemptive"]}}, DefaultBaseStyle -> "Column", 
-     GridBoxAlignment -> {"Columns" -> {{Center}}}, 
-     GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
-      GridBoxSpacings -> {"Columns" -> {{Automatic}}, "Rows" -> {{3}}}], 
-    "Column"]},
-  "RowDefault"]], "Output",
- CellChangeTimes->{{3.9610702080260544`*^9, 3.961070210144249*^9}, 
-   3.961070264582987*^9, 3.961070462039154*^9},
- CellLabel->"Out[3]=",ExpressionUUID->"afac187e-91eb-8e44-89b0-068971dca8f8"],
-
-Cell[BoxData["\<\"\:041a\:0440\:0435\:0441\:0442\:0438\:043a\:0438 \:043f\
-\:043e\:0431\:0435\:0434\:0438\:043b\:0438!\"\>"], "Print",
- CellChangeTimes->{3.9610704705018063`*^9},
- CellLabel->"",ExpressionUUID->"4b4c321f-3727-ce41-885a-dc7da7632a56"]
-}, Open  ]]
+ RowBox[{"<<", "\"\<code.wl\>\""}], "\[IndentingNewLine]", 
+ RowBox[{"Game", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.9610702737414684`*^9, 3.961070274157213*^9}, {
+  3.9611293486195908`*^9, 3.961129350491541*^9}, {3.9611294162094364`*^9, 
+  3.9611294166113663`*^9}, {3.961222651828537*^9, 3.9612226538840256`*^9}},
+ CellLabel->
+  "In[193]:=",ExpressionUUID->"c82b6de2-075e-5f41-98de-a3ca42db728e"]
 }, Open  ]]
 },
 WindowSize->{1152, 615.6},
@@ -172,12 +81,7 @@ Cell[809, 28, 458, 6, 121, "Subsubsection",ExpressionUUID->"aaf5a2d8-ca64-af4c-a
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[1304, 39, 219, 4, 125, "Title",ExpressionUUID->"816003ec-7911-9245-83ea-4bdc3b2b014a"],
-Cell[1526, 45, 323, 6, 61, "Input",ExpressionUUID->"c82b6de2-075e-5f41-98de-a3ca42db728e"],
-Cell[CellGroupData[{
-Cell[1874, 55, 196, 3, 36, "Input",ExpressionUUID->"12354596-e17e-1245-b0cc-3e377cc1c4e9"],
-Cell[2073, 60, 3792, 80, 672, "Output",ExpressionUUID->"afac187e-91eb-8e44-89b0-068971dca8f8"],
-Cell[5868, 142, 249, 3, 28, "Print",ExpressionUUID->"4b4c321f-3727-ce41-885a-dc7da7632a56"]
-}, Open  ]]
+Cell[1526, 45, 541, 10, 86, "Input",ExpressionUUID->"c82b6de2-075e-5f41-98de-a3ca42db728e"]
 }, Open  ]]
 }
 ]
